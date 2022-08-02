@@ -49,8 +49,12 @@
 
         .searchBar {
           padding: 5px 20px;
-          border: 2px solid rgb(235, 235, 235);
-          border-radius: 4px;
+          border: {
+            width: 2px;
+            style: solid;
+            color: rgb(235, 235, 235);
+            radius: 4px;
+          }
           background-color: rgba(245, 245, 245, 0.8);
           text-align: center;
 
@@ -172,8 +176,7 @@
       margin-left: 30px;
 
       .user-profile {
-        display: flex;
-        align-items: center;
+        @include flexbox(none, center);
         height: 60px;
 
         .profile-img {
@@ -269,7 +272,11 @@
       .suggestion {
         height: 180px;
         margin-bottom: 20px;
-        border: 1px solid rgb(235, 235, 235);
+        border: {
+          width: 1px;
+          style: solid;
+          color: rgb(235, 235, 235);
+        }
         background-color: #ffffff;
 
         h2 {
@@ -277,13 +284,12 @@
         }
 
         .updated-users {
-          display: flex;
-          justify-content: space-between;
+          @include flexbox(space-between, none);
           padding: 6px 10px;
         }
 
         .updated-user {
-          display: flex;
+          @include flexbox(none, none);
         }
 
         .updated-user__img {
@@ -292,7 +298,9 @@
           background: url('../../../public/images/author-img.png') no-repeat
             center;
           background-size: cover;
-          border-radius: 50%;
+          border: {
+            radius: 50%;
+          }
         }
 
         .updated-user__info {
@@ -311,16 +319,16 @@
       }
 
       .header-suggestion {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexbox(space-between, center);
         padding: 5px 10px;
 
         button {
           border: none;
           background-color: transparent;
-          font-size: 14px;
-          font-weight: 500;
+          font: {
+            size: 14px;
+            weight: 500;
+          }
         }
       }
 
